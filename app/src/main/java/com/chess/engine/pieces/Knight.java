@@ -26,9 +26,7 @@ public class Knight extends Piece {
 
         for (final int currentCandidateOffset : CANDIDATE_MOVE_COORDINATES) {
             final int candidateDestinationCoordinate = this.piecePosition + currentCandidateOffset;
-
             if (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
-
                 if (isFirstColumnExclusion(this.piecePosition, currentCandidateOffset)
                         || isSecondColumnExclusion(this.piecePosition, currentCandidateOffset)
                         || isSeventhColumnExclusion(this.piecePosition, currentCandidateOffset)
@@ -43,7 +41,6 @@ public class Knight extends Piece {
                 } else {
                     final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                     final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
-
                     if (this.pieceAlliance != pieceAlliance) {
                         legalMoves.add(new Move.AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));//not attacking move
                     }
