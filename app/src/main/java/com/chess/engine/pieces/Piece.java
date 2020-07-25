@@ -11,14 +11,21 @@ public abstract class Piece {
 
     protected final int piecePosition;
     protected final Alliance pieceAlliance;
+    protected final boolean isFirstMove;
 
-    Piece(final int piecePosition, final Alliance pieceAlliance) {
+    Piece(final int piecePosition, final Alliance pieceAlliance, boolean isFirstMove) {
         this.piecePosition = piecePosition;
         this.pieceAlliance = pieceAlliance;
+        //TODO more work here!!!
+        this.isFirstMove = false;
     }
 
     public Alliance getPieceAlliance() {
         return this.pieceAlliance;
+    }
+
+    public boolean isFirstMove() {
+        return this.isFirstMove;
     }
 
     public abstract Collection<Move> calculateLegalMoves(final Board board);
