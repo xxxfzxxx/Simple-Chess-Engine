@@ -48,7 +48,10 @@ public class King extends Piece {
 
         return null;
     }
-
+    @Override
+    public String toString() {
+        return PieceType.KING.toString();
+    }
     private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
         return BoardUtils.FIRST_COLUMN[currentPosition] && ((candidateOffset == -9) || (candidateOffset == -1)
                 || (candidateOffset == 7));
